@@ -26,7 +26,7 @@ function AddCustomer({open, setOpen, update=false,data}) {
             setName(data.name);
             setContact(data.contact);
             setSalary(data.salary);
-           // setAddress(data.customer_address);
+           setId(data.id);
         }
     },[data])
 
@@ -81,7 +81,7 @@ function AddCustomer({open, setOpen, update=false,data}) {
         }
 
         if (update){
-            axios.put('http://127.0.0.1:8000/api/customer/edit/3'+id,data)
+            axios.put('http://127.0.0.1:8000/api/customer/edit/'+id,data)
                 .then(function (response){
                     Toast.fire({
                         icon: 'success',
