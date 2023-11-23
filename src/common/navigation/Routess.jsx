@@ -2,10 +2,7 @@
 import ViewCustomer from "../../pages/ViewCustomer/ViewCustomer.jsx";
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 
-
-
-
-const routes = [
+const Routess = [
     {
         name:'view customer',
         key: 'view-customer',
@@ -23,4 +20,4 @@ const routes = [
     }
 ]
 
-export default routes;
+export default Routess;

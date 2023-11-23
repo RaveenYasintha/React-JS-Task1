@@ -130,9 +130,7 @@ function Register() {
               marginInlineStart: 4,
               marginTop: '7px',
               typography: 'body1',
-              '& > :not(style) ~ :not(style)': {
-                ml: 2,
-              },
+              '& > :not(style) ~ :not(style)': { ml: 2,},
             }}
             onClick={preventDefault}
           >

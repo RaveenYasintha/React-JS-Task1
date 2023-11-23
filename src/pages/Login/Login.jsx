@@ -12,6 +12,7 @@ import Divider from '@mui/material/Divider';
 import {useNavigate} from 'react-router-dom';
 import {useState} from "react";
 import Toast from '../../common/components/Alert/Alert';
+import '../Login/Login.css'
 
 function Login() {
 
@@ -116,7 +117,7 @@ function Login() {
             <Divider />
 
             <CardActions sx={{ marginTop: '33px' }}>
-              <Button onClick={()=> loginAction ()} sx={{ backgroundColor: "#8EB53E" }} variant="contained" fullWidth> Login</Button>
+              <Button className='loginButton' onClick={()=> loginAction ()} sx={{ backgroundColor: "#8EB53E" }} variant="contained" fullWidth> Login</Button>
             </CardActions>
 
 

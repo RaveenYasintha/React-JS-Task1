@@ -10,6 +10,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DrawIcon from '@mui/icons-material/Draw';
 import Toast from '../../common/components/Alert/Alert.jsx';
 import Swal from "sweetalert2";
+import Avatar from '@mui/material/Avatar';
+import AddAddress from '../../component/AddAddress/AddAddress.jsx';
+
 
 import axios from 'axios';
 
@@ -21,6 +24,7 @@ function ViewCustomer() {
   const [open, setOpen] = useState(false);
   const [updateopen, setUpdateopen] = useState(false);
   const [updateData, setUpdateData] = useState(false);
+  const [addressopen,setAddressopen] = useState(false);
 
   const handleClickOpen = () => {
       setOpen(true);
@@ -31,10 +35,11 @@ function ViewCustomer() {
   };
 
   const  columns = [
+      {id: 'profile', label: 'Profile Pic',minWidth:100},
       {id: 'name', label: 'Name',minWidth:170},
       {id: 'contact', label: 'Age',minWidth:100},
       {id: 'salary', label: 'Contact Number', minWidth:170, align:'center'},
-      {id: 'address', label: 'Address', minWidth:170, align:'left'},
+      {id: 'address', label: 'Address', minWidth:170, align:'center'},
       {id: 'action', label: 'Action', minWidth:170, align:'center'},
 
   ];
@@ -99,10 +104,14 @@ function ViewCustomer() {
               customerData.forEach((val)=>{
                   console.log(val)
                   array.push({
+
+                      profile:<><Avatar alt="Remy Sharp" src="" /></>,
                       name:val.name,
                       contact:val.contact,
                       salary:val.salary,
-                      address:val.address,
+                      address:<><Button onClick={()=> {setAddressopen(true)}} sx={{backgroundColor:'#8EB53E',fontWeight:1000, color:'white',width:100}}>Add</Button>
+                                <Button sx={{backgroundColor:'#8EB53E',fontWeight:1000, color:'white',marginLeft:2,width:100}}>View</Button>
+                              </>,
                       action: (
                           <div>
                               <IconButton color='error' aria-label="delete" onClick={()=> deleteCustomer(val.id)}>
@@ -133,7 +142,7 @@ function ViewCustomer() {
 
 
           <Box sx={{display: 'flex', justifyContent:'end',marginY:3}}>
-              <Button sx={{backgroundColor:'#8EB53E'}} onClick={()=> setOpen(true)} variant="contained">Add Customer</Button>
+              <Button sx={{backgroundColor:'#8EB53E',width:300,fontWeight:800,height:50}} onClick={()=> setOpen(true)} variant="contained">Add Customer</Button>
           </Box>
           <MiniTable rows={data} columns={columns}/>
 
@@ -143,6 +152,9 @@ function ViewCustomer() {
 
           <div>
               <AddCustomer data={updateData} update={true} open={updateopen} setOpen={(val)=> setUpdateopen(val)} updateData={()=> loadCustomer()}/>
+          </div>
+          <div>
+            <AddAddress open={addressopen} setOpen={(val)=> setAddressopen(val)}/>
           </div>
 
       </div>

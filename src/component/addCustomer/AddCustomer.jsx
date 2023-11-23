@@ -12,7 +12,7 @@ import Toast from "../../common/components/Alert/Alert.jsx";
 import instance from "../../services/AxiosOrders.jsx";
 import axios from 'axios';
 
-function AddCustomer({open, setOpen, update=false,data}) {
+function AddCustomer({open,updateData, setOpen, update=false,data}) {
     console.log(data);
 
     const [name, setName] = useState('');
@@ -83,6 +83,8 @@ function AddCustomer({open, setOpen, update=false,data}) {
         if (update){
             axios.put('http://127.0.0.1:8000/api/customer/edit/'+id,data)
                 .then(function (response){
+                    updateData();
+                    setOpen(false);
                     Toast.fire({
                         icon: 'success',
                         title: 'Update customer successfully'
@@ -99,6 +101,8 @@ function AddCustomer({open, setOpen, update=false,data}) {
         }else{
             instance.post('http://127.0.0.1:8000/api/customer',data)
                 .then(function (response){
+                    updateData();
+                    setOpen(false)
                     Toast.fire({
                         icon: 'success',
                         title: 'Save customer successfully'

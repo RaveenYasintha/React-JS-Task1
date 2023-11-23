@@ -15,7 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import routes from "../common/navigation/routes.jsx";
+import Routess from '../common/navigation/Routess';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -167,7 +167,7 @@ function Main1(){
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {routes.map((text, index) => (
+                    {Routess.map((text, index) => (
                         <ListItem key={index} disablePadding sx={{display: 'block'}}>
                             <Link to={text.path} style={{textDecoration:'none'}}>
                                 <ListItemButton
@@ -204,7 +204,7 @@ function Main1(){
                 <div>
                     <Routes>
                         <Route path={"*"} element={<Navigate to={'/view-customer'}/>}/>
-                        {getRoutes(routes)}
+                        {getRoutes(Routess)}
 
                     </Routes>
                 </div>
