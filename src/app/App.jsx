@@ -75,7 +75,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 function App() {
   const [dashboard, setDashboard] = useState(false);
 
-  console.log(localStorage.getItem("login"));
   useEffect(() => {
     if (localStorage.getItem("login") === "loged") {
       setDashboard(true);

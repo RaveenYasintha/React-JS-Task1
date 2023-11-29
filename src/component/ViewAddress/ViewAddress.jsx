@@ -17,10 +17,8 @@ function ViewAddress({ data, open, handleClose }) {
         setAddress(response.data.customer);
       })
       .catch(function (error) {
-        console.log(error);
       });
 
-    console.log(adresses);
   }
 
   useEffect(() => {

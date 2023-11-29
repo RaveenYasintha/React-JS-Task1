@@ -24,7 +24,6 @@ function Register() {
   const [compassword, setcomPassword] = useState("");
   const onRegister = () => {
     ``;
-    console.log(name, email, password, compassword);
     if (name !== "" && email !== "" && password !== "" && compassword !== "") {
       if (password === compassword) {
         const data = {

@@ -75,8 +75,6 @@ function AddCustomer({ open, updateData, setOpen, update = false, data }) {
       return;
     }
 
-    console.log(name, contact, salary, address);
-
     const data = {
       name: name,
       contact: contact,

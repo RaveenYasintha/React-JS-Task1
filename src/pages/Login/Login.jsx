@@ -26,7 +26,6 @@ function Login() {
 
   const loginAction = () => {
     if (email == hardcoded.email && pass == hardcoded.password) {
-      console.log("log");
       Toast.fire({
         icon: "success",
         title: "Signed in successfully",

@@ -83,7 +83,6 @@ function ViewCustomer() {
         const customerData = response.data.customer;
         const array = [];
         customerData.forEach((val) => {
-          console.log(val.image);
           array.push({
             profile: (
               
@@ -139,7 +138,6 @@ function ViewCustomer() {
         setData(array);
       })
       .catch(function (error) {
-        console.log(error);
       });
   };
   return (
